@@ -1,0 +1,21 @@
+{
+  "name": "my-project",
+  "source": "src/pages/index.html",
+  "scripts": {
+    "sass": "npx node-sass -w scss/style.scss style.css",
+    "start": "parcel src/pages/index.html",
+    "build": "parcel build",
+    "publish": "npm run build && gh-pages -d dist"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
+    "gh-pages": "^5.0.0",
+    "node-sass": "^8.0.0",
+    "parcel": "latest",
+    "sass": "^1.62.1",
+    "sass-loader": "^13.2.2"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
