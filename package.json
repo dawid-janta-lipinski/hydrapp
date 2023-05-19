@@ -5,7 +5,8 @@
     "sass": "npx node-sass -w scss/style.scss style.css",
     "start": "parcel src/pages/index.html",
     "build": "parcel build --public-url /hydrapp/",
-    "publish": "npm run build && gh-pages -d dist"
+    "publish": "npm run build && gh-pages -d dist",
+    "generate-icons": "npx pwa-asset-generator ./src/assets/img/water-glass.svg ./pwa -i ./src/pages/index.html -m ./manifest.json  --path-override pwa --type png -b \"#2D2241\""
   },
   "devDependencies": {
     "@parcel/packager-raw-url": "^2.8.3",
