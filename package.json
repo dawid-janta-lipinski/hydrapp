@@ -4,7 +4,7 @@
   "scripts": {
     "sass": "npx node-sass -w scss/style.scss style.css",
     "start": "parcel src/pages/index.html",
-    "build": "parcel build",
+    "build": "parcel build --public-url /hydrapp/",
     "publish": "npm run build && gh-pages -d dist"
   },
   "devDependencies": {
