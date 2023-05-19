@@ -73,3 +73,25 @@ body {
     height: 23px;
   }
 }
+@media (max-width: 375px) {
+  .glass {
+    width: 140px;
+    height: 140;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 48px;
+    &__counter {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 56px;
+      line-height: 65.5px;
+      color: black;
+      padding-left: 48px;
+      padding-right: 48px;
+      padding-top: 57px;
+      padding-bottom: 34px;
+    }
+  }
+}
