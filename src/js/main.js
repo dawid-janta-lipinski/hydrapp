@@ -1,3 +1,6 @@
+import {registerSW} from './pwa.js';
+registerSW();
+
 console.log("hello world");
 const counter = document.querySelector('.counter__js');
 const buttonAdd = document.querySelector('.add__js');
