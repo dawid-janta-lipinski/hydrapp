@@ -6,8 +6,6 @@ body {
 }
 
 .app {
-  min-width: 100vh;
-  min-height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -72,6 +70,13 @@ body {
   border: none;
   font-size: 14px;
   line-height: 16px;
+}
+
+@media (width >= 1024px) {
+  .app {
+    min-width: 100vh;
+    min-height: 100vh;
+  }
 }
 
 /*# sourceMappingURL=index.e8265c92.css.map */
