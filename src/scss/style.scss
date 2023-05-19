@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap");
+
+body {
+  font-family: "Roboto", medium;
+  color: #ffff;
+  background: #3767ad;
+}
+
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-width: 100vh;
+  min-height: 100vh;
+  &__title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 55px;
+    line-height: 64px;
+    margin-bottom: 64px;
+  }
+}
+
+.glass {
+  background-image: url("../assets/img/water-glass.svg");
+  width: 280px;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 48px;
+  &__counter {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 112px;
+    line-height: 131px;
+    color: black;
+    padding-left: 96px;
+    padding-right: 96px;
+    padding-top: 114px;
+    padding-bottom: 68px;
+  }
+}
+
+.button {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  &__add {
+    font-size: 18px;
+    line-height: 21px;
+    width: 216px;
+    height: 47px;
+    left: 79px;
+    top: 531px;
+    background: #ffffff;
+    color: black;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    border: #ffffff;
+    margin-bottom: 37px;
+  }
+  &__delete {
+    color: white;
+    background: #3767ad;
+    border: none;
+    font-size: 14px;
+    line-height: 16px;
+    width: 184px;
+    height: 23px;
+  }
+}
