@@ -559,27 +559,44 @@ function hmrAccept(bundle, id) {
 },{}],"1SICI":[function(require,module,exports) {
 var _pwaJs = require("./pwa.js");
 (0, _pwaJs.registerSW)();
-console.log("hello world");
-const counter = document.querySelector(".counter__js");
-const buttonAdd = document.querySelector(".add__js");
-const buttonDelete = document.querySelector(".delete__js");
-const key = new Date().toLocaleString().slice(0, 10);
-let currentGlassCounter = 0;
-const localStorageValue = localStorage.getItem(key);
-if (localStorageValue) currentGlassCounter = localStorageValue;
-else localStorage.setItem(key, 0);
-counter.innerHTML = currentGlassCounter;
-buttonAdd.addEventListener("click", ()=>{
-    currentGlassCounter++;
-    counter.innerHTML = currentGlassCounter;
-    localStorage.setItem(key, currentGlassCounter);
-});
-buttonDelete.addEventListener("click", ()=>{
-    currentGlassCounter--;
-    if (currentGlassCounter < 0) currentGlassCounter = 0;
-    counter.innerHTML = currentGlassCounter;
-    localStorage.setItem(key, currentGlassCounter);
-});
+class Glass {
+    constructor(){
+        this.counter = document.querySelector(".counter__js");
+        this.buttonAdd = document.querySelector(".add__js");
+        this.buttonDelete = document.querySelector(".delete__js");
+        this.key = new Date().toLocaleString().slice(0, 10);
+        this.currentGlassCounter = 0;
+    }
+    init() {
+        this.getCurrentGlassCounter(localStorage.getItem(this.key));
+        this.setCurrentGlassCounter();
+        this.buttonAdd.addEventListener("click", ()=>{
+            this.addGlass();
+        });
+        this.buttonDelete.addEventListener("click", ()=>{
+            this.deleteGlass();
+        });
+    }
+    getCurrentGlassCounter(localStorageValue) {
+        if (localStorageValue) this.currentGlassCounter = localStorageValue;
+        else localStorage.setItem(this.key, 0);
+    }
+    setCurrentGlassCounter() {
+        this.counter.innerHTML = this.currentGlassCounter;
+        if (this.currentGlassCounter !== 0) localStorage.setItem(this.key, this.currentGlassCounter);
+    }
+    addGlass() {
+        this.currentGlassCounter++;
+        this.setCurrentGlassCounter();
+    }
+    deleteGlass() {
+        this.currentGlassCounter--;
+        if (this.currentGlassCounter < 0) this.currentGlassCounter = 0;
+        this.setCurrentGlassCounter();
+    }
+}
+const glass = new Glass();
+glass.init();
 
 },{"./pwa.js":"8OXHx"}],"8OXHx":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
